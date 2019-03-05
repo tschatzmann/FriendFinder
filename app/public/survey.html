@@ -31,12 +31,12 @@
     <input type="text" id="name" class="form-control" required>
 
     <h4>Link to Photo Image (Required)</h4>
-    <input type="text" id="photo" class="form-control" required>
+    <input type="text" id="photo" class="form-control" x>
 
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>You care more about following the rules than playing game.</h4>
+    <h4>Cards are more important than position.</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +47,7 @@
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you judge people on their political affiliations.</h4>
+    <h4>Generally speaking, I play to win regardless of friendships.</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +59,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <h4>I play for money.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +71,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>Would you go on trip with little noice.</h4>
+    <h4>A proper raise is three times the current blind.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +83,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>Family is very important to you.</h4>
+    <h4>I perfer cash over tournament style.</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -95,7 +95,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>You tie your selfworth to your profession.</h4>
+    <h4>I target players.</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +107,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>Would you consideration a sentive persion.</h4>
+    <h4>I believe in protecting/defending my big blind.</h4>
     <select class="chosen-select" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -118,7 +118,7 @@
     </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>Would you consider yourself easily offended by others.</h4>
+    <h4>I never fold my small blind.</h4>
     <select class="chosen-select" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -129,7 +129,7 @@
     </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+    <h4>I shuffle/play with my chips while at table.</h4>
     <select class="chosen-select" id="q9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -140,7 +140,7 @@
     </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You feel more energetic after spending time with a group of people.</h4>
+    <h4>When everyone checks, I like to bet to try and steal the pot.</h4>
     <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -213,7 +213,8 @@
     // Capture the form inputs
     $("#submit").on("click", function(event) {
       event.preventDefault();
-
+      let defaultPhoto = "../data/texas-holdem-poker.jpg";
+      photo = defaultPhoto;
       // Form validation
       function validateForm() {
         var isValid = true;
@@ -251,6 +252,7 @@
             $("#q10").val()
           ]
         };
+        
 
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
