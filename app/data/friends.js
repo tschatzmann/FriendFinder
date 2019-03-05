@@ -7,8 +7,9 @@
 
 var friendsArray = [
     {
-      customerName: "Ahmed",
-      customerEmail: "ahmed@example.com",
+      Name: "Ahmed",
+      Email: "ahmed@example.com",
+      photo: "dkdkdkd",
       question1: "afhaque89",
       question2: "000-000-0000",
       scores: [ 5, 4, 3, 1, , 2, 5, 2, 2, 2 ]

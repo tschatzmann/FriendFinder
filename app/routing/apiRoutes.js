@@ -40,15 +40,14 @@ module.exports = function(app) {
       var userName = userData.name;
       var userScores = userData.scores;
       // Converting the users score to a number (Instead of string)
-      var b = userScores.map(function(item) {
+      var userScoresNum = userScores.map(function(item) {
           return parseInt(item, 10);
-          console.log("Value of b " + b);
       });
 
       userData = {
           "name": req.body.name,
           "photo": req.body.photo,
-          "scores": b
+          "scores": userScoresNum
       };
     console.log(userData);
 
@@ -56,11 +55,11 @@ module.exports = function(app) {
       console.log("Name: " + userName);
       console.log("User Score " + userScores);
 
-      console.log('b outside function ' + b);
+      console.log('userScoreNum outside function ' + userScoresNum);
   
       // Converting the users score to a sum number (Adds up all the numbers in array)
       //
-      var sum = b.reduce((tot, amt) => tot + amt, 0);
+      var sum = userScoresNum.reduce((tot, amt) => tot + amt, 0);
       
       console.log("Sum of users score " + sum);
       console.log("Best match friend diff " + bestMatch.friendDifference);
@@ -71,7 +70,7 @@ module.exports = function(app) {
       // Loop through all the friend possibilities in the database. 
       for (var i = 0; i < friendsData.length; i++) {
 
-          console.log(friendsData[i].customerName);
+          console.log(friendsData[i].Name);
           totalDifference = 0;
           console.log("Total Diff " + totalDifference);
           console.log("Best match friend diff " + bestMatch.friendDifference);
@@ -91,8 +90,8 @@ module.exports = function(app) {
           if (totalDifference <= bestMatch.friendDifference) {
 
               // Reset the bestMatch to be the new friend. 
-              bestMatch.name = friendsData[i].name;
-              bestMatch.photo = friendsData[i].photo;
+              bestMatch.name = friendsData[i].Name;
+              bestMatch.photo = friendsData[i].Photo;
               bestMatch.friendDifference = totalDifference;
               // }
 
