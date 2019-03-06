@@ -29,10 +29,10 @@ module.exports = function (app) {
     //Comparing user with their best friend match 
     var totalDifference = 0;
     //Object to hold the best match
-    var bestMatch = {
+    var pokerMatch = {
       name: "",
       photo: "",
-      friendDifference: 1000
+      friendDifference: 50
     };
 
     // Here we take the result of the user's survey POST and parse it.
@@ -62,10 +62,10 @@ module.exports = function (app) {
     var userScoresSum = userScoresNum.reduce((tot, amt) => tot + amt, 0);
 
     console.log("Sum of users score " + userScoresSum);
-    console.log("Best match friend diff " + bestMatch.friendDifference);
+    console.log("Best match friend diff " + pokerMatch.friendDifference);
 
 
-    console.log("+++++++=================++++++++++");
+    // console.log("+++++++=================++++++++++");
 
     // Loop through all the friend possibilities in the database. 
     for (var i = 0; i < friendsData.length; i++) {
@@ -73,7 +73,7 @@ module.exports = function (app) {
       console.log(friendsData[i].Name);
       totalDifference = 0;
       console.log("Total Diff " + totalDifference);
-      console.log("Best match friend diff " + bestMatch.friendDifference);
+      console.log("Best match friend diff " + pokerMatch.friendDifference);
 
       var friendScoreSum = friendsData[i].scores.reduce((tot, amt) => tot + amt, 0);
       console.log("Total friend score " + friendScoreSum);
@@ -81,26 +81,26 @@ module.exports = function (app) {
       console.log(" -------------------> " + totalDifference);
 
       // If the sum of differences is less then the differences of the current "best match"
-      if (totalDifference <= bestMatch.friendDifference) {
+      if (totalDifference <= pokerMatch.friendDifference) {
 
-        // Reset the bestMatch to be the new friend. 
-        bestMatch.name = friendsData[i].Name;
-        bestMatch.photo = friendsData[i].Photo;
-        bestMatch.friendDifference = totalDifference;
+        // Reset the pokerMatch to be the new friend. 
+        pokerMatch.name = friendsData[i].Name;
+        pokerMatch.photo = friendsData[i].Photo;
+        pokerMatch.friendDifference = totalDifference;
         // }
 
       }
       console.log(totalDifference + " Total Difference");
 
     }
-    console.log(bestMatch);
+    console.log(pokerMatch);
     // Finally save the user's data to the database (this has to happen AFTER the check. otherwise,
     // the database will always return that the user is the user's best friend).
     friendsData.push(userData);
     console.log("New User added");
     console.log(userData);
-    // Return a JSON with the user's bestMatch. This will be used by the HTML in the next page. 
-    res.json(bestMatch);
+    // Return a JSON with the user's pokerMatch. This will be used by the HTML in the next page. 
+    res.json(pokerMatch);
 
   });
 
