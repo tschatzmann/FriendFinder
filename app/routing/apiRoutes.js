@@ -70,7 +70,7 @@ module.exports = function (app) {
     // Loop through all the friend possibilities in the database. 
     for (var i = 0; i < friendsData.length; i++) {
 
-      console.log(friendsData[i].Name);
+      console.log(friendsData[i].name);
       totalDifference = 0;
       console.log("Total Diff " + totalDifference);
       console.log("Best match friend diff " + pokerMatch.friendDifference);
@@ -84,8 +84,8 @@ module.exports = function (app) {
       if (totalDifference <= pokerMatch.friendDifference) {
 
         // Reset the pokerMatch to be the new friend. 
-        pokerMatch.name = friendsData[i].Name;
-        pokerMatch.photo = friendsData[i].Photo;
+        pokerMatch.name = friendsData[i].name;
+        pokerMatch.photo = friendsData[i].photo;
         pokerMatch.friendDifference = totalDifference;
         // }
 
