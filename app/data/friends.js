@@ -8,12 +8,12 @@
 var friendsArray = [
     {
       name: "Ahmed",
-      photo: "dkdkdkd",
+      photo: "https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/51960778_2305521733056607_8764632670232641536_n.jpg?_nc_cat=105&_nc_ht=scontent-mia3-2.xx&oh=7e1256cff843973e1e287839cd9f28c8&oe=5D257FFA",
       scores: [ 5, 4, 3, 1, 5, 2, 5, 2, 2, 2 ]
     },
     {
       name: "Linda",
-      photo: "https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.0-9/10151946_10152193601935687_6912141694837279439_n.jpg?_nc_cat=110&_nc_ht=scontent.ftpa1-1.fna&oh=d1d7b48aa1f32eff3a09e9b942470b75&oe=5D1A6525ww.hollywoodcolumbus.com/-/media/png/east/hollywood-columbus/images/aside-486x273/poker18-bulleted-list-486x273.jpg",
+      photo: "https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/222189_217013771649509_6422640_n.jpg?_nc_cat=107&_nc_ht=scontent-mia3-2.xx&oh=60647157aefa3cd2c2753245517005e3&oe=5D0C1A06",
       scores: [2,2,5,5,5,1,4,3,1,5]
       },
       {
