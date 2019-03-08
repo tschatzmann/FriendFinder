@@ -18,7 +18,7 @@ var friendsArray = [
       },
       {
         name: "Tammy",
-        photo: "https://www.facebook.com/photo/download/?fbid=10155223774629528&ext=1552103723&hash=AeRBRYPW2FlrvGGK",
+        photo: "https://www.gamblingpedia.org/wp-content/uploads/2018/12/poker-hands.jpg",
         scores: [
         2,
         2,
